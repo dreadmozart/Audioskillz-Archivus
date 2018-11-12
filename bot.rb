@@ -1,10 +1,9 @@
 require 'telegram_bot'
-require 'telebot'
 token = '611625592:AAGuFBSmQnFzstpcTXJxo5myx8i1Fpk8FDE'
-bot = Telegram::Bot.new(token: token)
+bot = TelegramBot.new(token: token)
 
 bot.get_updates(fail_silently: true) do |message|
-  markup = Telebot::ReplyKeyboardMarkup.new(
+  markup = TelebotReplyKeyboardMarkup.new(
     keyboard: [
       [ "get_me", "send_message"]
     ]
