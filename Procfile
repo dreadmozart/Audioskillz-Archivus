@@ -1,1 +1,1 @@
-bot: ruby bot.rb
+bot: heroku run ruby bot.rb

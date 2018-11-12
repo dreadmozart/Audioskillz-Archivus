@@ -20,14 +20,11 @@ Telegram::Bot::Client.run(token) do |bot|
         bot.api.send_message(
           chat_id: message.chat.id,
           text: "Пока, #{message.from.first_name}")
-      when '/ticket'
+      else
         bot.api.send_message(
-          chat_id: update.message.chat.id,
-          text: "Пожалуйста предъявите студенческий токен")
-          #for user reply#
-          ticket = update.message.text #get user reply#
-          bot.send_message(
-            chat_id=update.message.chat_id, text=ticket)
-        end
+          chat_id: message.chat.id,
+          ANSWERS.sample
+        )
       end
-end
+    end
+  end
