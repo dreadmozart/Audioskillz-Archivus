@@ -30,3 +30,4 @@ Telegram::Bot::Client.run(token) do |bot|
             chat_id=update.message.chat_id, text=ticket)
         end
       end
+end
