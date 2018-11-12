@@ -23,4 +23,3 @@ Telegram::Bot::Client.run(token) do |bot|
             end
         end
       end
-    end
