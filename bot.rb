@@ -11,7 +11,8 @@ bot.get_updates(fail_silently: true) do |message|
     when /start/i
       reply.text = "All I can do is say hello dick! Try the /greet command."
     when /greet/i
-      reply.text = "Hello, #{message.from.first_name}. 🤖"
+      greetings = ['Привет','Йо','Hi']
+      reply.text = "#{greetings.sample.capitalize}, #{message.from.first_name}! 🤖"
     else
       reply.text = "I have no idea what #{command.inspect} means."
     end
