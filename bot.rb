@@ -12,8 +12,6 @@ Telegram::Bot::Client.run(token) do |bot|
     when '/ticket'
       question = 'Пожалуйста предъявите студенческий токен'
       answers =
-        Telegram::Bot::Types::ReplyKeyboardMarkup
-        .new(keyboard: [%w(A B), %w(C D)], one_time_keyboard: true)
       bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
     end
   end
