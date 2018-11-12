@@ -35,12 +35,11 @@ GEM
     excon (0.62.0)
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.12.2)
-      faraday (>= 0.7.4, < 1.0)
     httpclient (2.8.3)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    inflecto (0.0.2)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -57,14 +56,14 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    telebot (0.1.2)
-      faraday
-      faraday_middleware
-      virtus
     telegram-bot (0.14.1)
       actionpack (>= 4.0, < 6.0)
       activesupport (>= 4.0, < 6.0)
       httpclient (~> 2.7)
+    telegram-bot-ruby (0.8.6.1)
+      faraday
+      inflecto
+      virtus
     telegram_bot (0.0.8)
       excon (>= 0.30.0)
       virtus (>= 1.0.0)
@@ -81,8 +80,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  telebot
   telegram-bot
+  telegram-bot-ruby
   telegram_bot
 
 BUNDLED WITH
