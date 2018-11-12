@@ -80,7 +80,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  telegram-bot
   telegram-bot-ruby
   telegram_bot
 
