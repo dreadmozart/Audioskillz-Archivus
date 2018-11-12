@@ -3,11 +3,6 @@ token = '611625592:AAGuFBSmQnFzstpcTXJxo5myx8i1Fpk8FDE'
 bot = TelegramBot.new(token: token)
 
 bot.get_updates(fail_silently: true) do |message|
-  markup = TelebotReplyKeyboardMarkup.new(
-    keyboard: [
-      [ "get_me", "send_message"]
-    ]
-  )
   puts "@#{message.from.username}: #{message.text}"
   command = message.get_command_for(bot)
 
@@ -20,7 +15,7 @@ bot.get_updates(fail_silently: true) do |message|
       user = client.get_me
       msg = "ID: #{user.id}\n"
       msg << "Username: #{user.username}"
-      client.send_message(chat_id: message.chat.id, text: msg)
+      client.send_message(chat_id: message.chat.id, text: reply.text)
     when /send_message/i
       client.send_message(chat_id: message.chat.id, text: "Hello, work or not?")
     when /greet/i
