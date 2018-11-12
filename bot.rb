@@ -10,8 +10,12 @@ Telegram::Bot::Client.run(token) do |bot|
     when '/stop'
       bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message.from.first_name}")
     when '/ticket'
+      goodToken = ['sAEKRJv2DnYdBJv9hYbm', 'UqX8I0ML5jK4VBUrWIDj']
       question = 'Пожалуйста предъявите студенческий токен'
-      answers =
+    if answers = goodToken
+    when bot.api.send_message(chat_id: message.chat.id, text: "Спасибо! Все верно!")
+    else bot.api.send_message(chat_id: message.chat.id, text: "Токен не найден!")
+    end
       bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
     end
   end
